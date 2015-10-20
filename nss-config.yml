@@ -4,6 +4,6 @@
   sudo: True
   tasks:
     - name: install libnss-myhostname
-      apt: name=libnss-myhostname state-latest
+      apt: name=libnss-myhostname state=latest
     - name: enable configuration
       replace: dest=/etc/nsswitch.conf regexp='(^(?!.*myhostname.*)hosts:(.*))' replace='\1 myhostname'
